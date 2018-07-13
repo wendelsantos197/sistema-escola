@@ -10,3 +10,9 @@ data_nascimento date,
 imagem varchar(100),
 turma varchar(1)
 );
+
+create TABLE curso(
+id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+codigo varchar(5),
+nome varchar(100)
+);

@@ -10,6 +10,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import br.com.ifpe.escola.model.Aluno;
 import br.com.ifpe.escola.model.AlunoDao;
+import br.com.ifpe.escola.model.Curso;
+import br.com.ifpe.escola.model.CursoDao;
 import br.com.ifpe.escola.util.Util;
 
 @Controller
@@ -22,7 +24,11 @@ public class AlunoController {
 	}
 
 	@RequestMapping("/aluno/add")
-	public String adicionarAluno() {
+	public String adicionarAluno(Model model) {
+		
+		CursoDao dao = new CursoDao();
+		List<Curso> listaCurso = dao.listar(null);
+		model.addAttribute("listaCurso", listaCurso);
 
 		return "aluno/incluirAluno";
 	}
@@ -37,7 +43,7 @@ public class AlunoController {
 	AlunoDao dao = new AlunoDao();
 	dao.salvar(aluno);
 
-	model.addAttribute("mensagem", "Aluno Incluído com Sucesso");
+	model.addAttribute("mensagem", "Aluno Incluï¿½do com Sucesso");
 	return "aluno/incluirAluno";
     }
 
@@ -67,6 +73,10 @@ public class AlunoController {
     AlunoDao dao = new AlunoDao();
 	Aluno aluno = dao.buscarPorId(id);
 	model.addAttribute("aluno", aluno);
+	
+	CursoDao dao2 = new CursoDao();
+	List<Curso> listaCurso = dao2.listar(null);
+	model.addAttribute("listaCurso", listaCurso);
 
 	return "aluno/alterarAluno";
     }

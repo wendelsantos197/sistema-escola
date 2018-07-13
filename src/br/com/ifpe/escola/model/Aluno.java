@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +34,10 @@ public class Aluno {
 	@Column
 	private String turma;
 	
+	@ManyToOne
+	@JoinColumn(name = "curso_id")
+	private Curso curso;
+	
 	
 	public int getId() {
 		return id;
@@ -44,6 +50,12 @@ public class Aluno {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public Curso getCurso() {
+		return curso;
+	}
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 	public String getEmail() {
 		return email;

@@ -53,6 +53,7 @@
 				<th style="width: 25%; vertical-align: middle;">Email</th>
 				<th style="width: 10%; vertical-align: middle; text-align: center;">Data de Nascimento</th>
 				<th style="width: 10%; vertical-align: middle; text-align: center;">Turma</th>
+				<th style="width: 10%; vertical-align: middle; text-align: center;">Curso</th>
 				<th style="width: 10%; vertical-align: middle; text-align: center;">Imagem</th>
 				<th style="width: 15%; vertical-align: middle; text-align: center;">Ações</th>
 			</tr>
@@ -72,6 +73,7 @@
 							</c:otherwise>
 						</c:choose>
 			    	</td>
+			    	<td style="vertical-align: middle;">${aluno.curso.nome}</td>
 			    	<td style="vertical-align: middle; text-align: center;"> 
 			    		<c:choose>
 							<c:when test="${not empty aluno.imagem}">
