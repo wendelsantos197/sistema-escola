@@ -16,3 +16,11 @@ id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 codigo varchar(5),
 nome varchar(100)
 );
+
+CREATE TABLE usuario (
+id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome varchar(100),
+email varchar(50),
+login varchar(50),
+senha varchar(50)
+);

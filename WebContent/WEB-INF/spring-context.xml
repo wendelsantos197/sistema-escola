@@ -36,4 +36,8 @@ class="org.springframework.context.support.ConversionServiceFactoryBean">
 </list>
 </property>
 </bean>
+
+	<mvc:interceptors>
+		<bean class="br.com.ifpe.escola.util.AutorizadorInterceptor" />
+	</mvc:interceptors>
 </beans>
